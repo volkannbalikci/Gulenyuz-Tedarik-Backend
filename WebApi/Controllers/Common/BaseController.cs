@@ -16,14 +16,12 @@ namespace WebApi.Controllers.Common
         protected int GetCurrentUsersId() => Convert.ToInt32(HttpContext.User.Claims.SingleOrDefault(e => e.Type.Equals(ClaimTypes.NameIdentifier)).Value);
 
 
-      /*  protected List<String> GetCurrentUsersRoles()
+       protected List<String> GetCurrentUsersRoles()
         {
             List<String> userRoles = new List<String>();
 
-            HttpContext.User.Claims.Where(e=> e.Type.Equals(ClaimTypes.Role)).ForEach(e=> { 
-                if(e)
-            })
-        }*/
+            return userRoles;
+        }
 
         protected ObjectResult GetDataResultResponseBySuccessStatus<TData>(IDataResult<TData> result)
         {
